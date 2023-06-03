@@ -3,16 +3,13 @@
 ENROLLMENT MODEL
 '''
 import models
-from models.user import User, Base
+from models.base_model import BaseModel
 
 
-class Enrollment(User):
+class Enrollment(BaseModel):
     ''' Enrollment class '''
 
-    enrollmentId = '' # primary key
-    userId = '' # reference user table
+    enrollmentId = '' # reference basemodel table or generate new id
+    StudentId = '' # refenrence student table or generate new id
     courseId = '' # reference course table
     enrollment_date = ''
-
-    def __init__(self):
-        super().__init__()

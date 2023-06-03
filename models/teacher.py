@@ -3,14 +3,10 @@
 TEACHER MODEL
 '''
 import models
-from models.user import User, Base
+from models.base_model import BaseModel
 
-class Teacher(User):
+class Teacher(BaseModel):
     ''' Teacher class '''
 
-    teacherId = '' # primary key
+    teacherId = '' # reference user table
     department = ''
-    userId = '' # reference user table
-
-    def __init__(self):
-        super().__init__()

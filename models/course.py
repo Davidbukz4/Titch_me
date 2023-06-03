@@ -3,17 +3,14 @@
 COURSE MODEL
 '''
 import models
-from models.user import User, Base
+from models.base_model import BaseModel
 
 
-class Course(User):
+class Course(BaseModel):
     ''' Course class '''
 
-    courseId = '' # primary key
+    courseId = '' # reference basemodel table or generate new id
     title = ''
     description = ''
     teacherID = '' # reference teacher table
     enrollmentId = '' # reference enrollment table
-
-    def __init__(self):
-        super().__init__()

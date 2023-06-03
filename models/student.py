@@ -3,16 +3,13 @@
 STUDENT MODEL
 '''
 import models
-from models.user import User, Base
+from models.base_model import BaseModel
 
 
-class Student(User):
+class Student(BaseModel):
     ''' Student Class '''
 
+    studentId = '' # reference user table
     faculty = ''
     department = ''
     grade_level = ''
-    studentId = ''
-
-    def __init__(self):
-        super().__init__()

@@ -2,18 +2,20 @@
 '''
 ASSIGNMENT MODEL
 '''
-from models.user import User, Base
+from models.base_model import BaseModel, Base
 import models
+from sqlalchemy import Column, String, Integer, ForeignKey, Date
+from sqlalchemy.orm import relationship
 
 
-class Assignment(User):
+class Assignment(BaseModel, Base):
     ''' Assignment class '''
 
-    assignmentId = '' # primary key
+    __tablename__ = 'assignments'
+    assignmentId = Column(String(60), primary_key=True)
     lessonId = '' # reference lesson table
-    title = ''
-    description = ''
-    due_date = ''
+    title = Column(String(256))
+    description = Column(String(256))
+    due_date = Column(Date)
 
-    def __init__(self):
-        super().__init__()
+    submissions = relationship('Submission', )

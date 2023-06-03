@@ -3,16 +3,13 @@
 LESSON MODEL
 '''
 import models
-from models.user import User, Base
+from models.base_model import BaseModel
 
 
-class Lesson(User):
+class Lesson(BaseModel):
     ''' Lesson class '''
 
-    lessonId = '' # primary key
+    lessonId = '' # reference basemodel or genereate new id
     courseId = '' # reference course table
     title = ''
     content = ''
-
-    def __init__(self):
-        super().__init__()
