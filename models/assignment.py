@@ -18,4 +18,4 @@ class Assignment(BaseModel, Base):
     description = Column(String(256))
     due_date = Column(Date)
 
-    submissions = relationship('Submission', )
+    submissions = relationship('Submission', backref=)
